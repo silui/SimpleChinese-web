@@ -2,15 +2,16 @@
   "name": "simplechinese-web",
   "version": "1.0.0",
   "description": "Nodejs and express implementation for auth",
-  "main": "index.js",
+  "main": "router.js",
   "scripts": {
+    "start": "node router.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/silui/SimpleChinese-web.git"
   },
-  "author": "",
+  "author": "Team SimpleChinese",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/silui/SimpleChinese-web/issues"
