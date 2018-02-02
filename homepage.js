@@ -5,6 +5,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.querySelector('#loginStatus').innerHTML='user loged in as '+user.email;
     document.querySelector('#loginButton').value='logout';
   }
+  document.querySelector('.main').style="display:on";
+  document.querySelector('.loader').style="display:none";
 });
 
 document.querySelector('#loginButton').addEventListener('click',function()
