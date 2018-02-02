@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var app = express();
+// var path = require('./watertester-32c5a-export.json');
 
 
 app.set('port',80);
@@ -19,6 +20,12 @@ app.get('/auth', function(req,res){
 	res
 		.status(200)
 		.sendFile('auth.html', {root: path.join(__dirname,'./auth')});
+});
+
+app.get('/vocab',function(req,res){
+	console.log('get to vocab')
+	res.status(200)
+		 .sendFile('vocab.html',{root: path.join(__dirname,'./vocabset')});
 });
 
 var server = app.listen(app.get('port'),function(){
