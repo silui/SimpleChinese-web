@@ -20,9 +20,11 @@ dbRef.on("value",function(snapshot)
   //add event listener for all picture
   for(var i=0;i<totalLevelSet+1;i++)
   {
-  document.getElementById(`Level${i}`).addEventListener("click",function()
+    document.getElementById('Level'+i).addEventListener("click",function()
     {
-      window.location.href=`/study/${i}`;
+      var clickedPic=this.id;
+      var targetNum=clickedPic.split("Level")[1];
+      window.location.href=`/study/${targetNum}`;
     });
   }
 });
