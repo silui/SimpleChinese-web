@@ -28,6 +28,20 @@ app.get('/vocab',function(req,res){
 		 .sendFile('vocab.html',{root: path.join(__dirname,'./vocabset')});
 });
 
+app.get('/study',function(req,res){
+	console.log('get to study')
+	res.status(200)
+		 .send('study set not specified');
+});
+
+app.get('/study/*',function(req,res){
+	console.log('get to study')
+	res.status(200)
+//		 .sendFile('vocab.html',{root: path.join(__dirname,'./vocabset')});
+			 .send('study set');
+});
+
+
 var server = app.listen(app.get('port'),function(){
 	var port = server.address().port;
 	console.log(port);

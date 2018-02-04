@@ -2,18 +2,27 @@
 // document.getElementById('vocabField').innerHTML='not hello';
 firebaseInit();
 var dbRef=firebase.database().ref("vocab");
+var totalLevelSet=0;
+//this function is called when firebase return db
 dbRef.on("value",function(snapshot)
 {
   var vocabListAll=snapshot.val();
-  var leftside=Object.keys(vocabListAll);
-  var rightside=Object.values(vocabListAll);
-  console.log(rightside[0].url);
+  var leftside=Object.keys(vocabListAll); //only array with level name
+  var rightside=Object.values(vocabListAll);  //json for the rest of db
+  //add picture of different levelset
   document.getElementById('vocabField').innerHTML=
   `<div class='char-book'>
-
   ${leftside.map(function(levelset,index){
-    return `
-    <img src='${rightside[index].url}'>
-    `
+    totalLevelSet=index;
+    return `<img src="${rightside[index].url}" id="Level${index}">`
   }).join('')}
-  </div>`;});
+  </div>`;
+  //add event listener for all picture
+  for(var i=0;i<totalLevelSet+1;i++)
+  {
+  document.getElementById(`Level${i}`).addEventListener("click",function()
+    {
+      window.location.href=`/study/${i}`;
+    });
+  }
+});
