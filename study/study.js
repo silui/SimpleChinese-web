@@ -55,33 +55,3 @@ dbRef.on("value",function(snapshot)
 
 });
 
-
-  // document.getElementById('studyField').innerHTML = 
-  // `
-  // 	${curStudy.map(function(charSet){
-  // 		return `
-  // 		<div>${charSet[0].pinyin}</div>\n
-  // 		<h2>${charSet[0].hanzi}</h2>
-  // 		`
-  // 	}).
-  // 	join('') }
-  // `
-
-
-  //document.getElementById('study').innerHTML;
-  // `
-  // <h2>${tempjson</h2>
-  // `
-  // ${tempjson(function(study){
-  //   return `
-  //   <div class="char">
-  //   	<h2>${tempjson[0][0].pinyin}</h>\n
-  //   </div>
-    
-  //   <div class='char-book'>
-  //   ${showChar}
-  //   </div>
-  //   `
-  // }).join('')}
-  
-
