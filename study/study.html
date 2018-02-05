@@ -8,9 +8,13 @@
   <body>
     <input type="button" id="clickP" value="Previous">
     <input type="button" id="clickN" value="Next">
+    <input type="button" id="soundButton" value="speak">
     <div id="studyField"> </div>
     <div id="transField"> </div>
   </body>
 </html>
 <script src="/firebase/firebase_init.js"></script>
 <script src="/study/study.js"></script>
+<audio id="aud" autoplay="autoplay">
+    <source id="src" type="audio/mpeg" src="">
+</audio>
