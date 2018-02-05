@@ -34,11 +34,11 @@ app.get('/study',function(req,res){
 		 .send('study set not specified');
 });
 
-app.get('/study/*',function(req,res){
+app.get('/vocab/study/*',function(req,res){
 	console.log('get to study')
 	res.status(200)
-//		 .sendFile('vocab.html',{root: path.join(__dirname,'./vocabset')});
-			 .send('study set');
+		 .sendFile('study.html',{root: path.join(__dirname,'./study')});
+			 //.send('study set');
 });
 
 

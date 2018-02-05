@@ -23,8 +23,8 @@ dbRef.on("value",function(snapshot)
     document.getElementById('Level'+i).addEventListener("click",function()
     {
       var clickedPic=this.id;
-      var targetNum=clickedPic.split("Level")[1];
-      window.location.href=`/study/${targetNum}`;
+      var targetNum=Number(clickedPic.split("Level")[1])+1;
+      window.location.href=`/vocab/study/${targetNum}`;
     });
   }
 });
