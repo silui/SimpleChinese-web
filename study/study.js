@@ -20,9 +20,12 @@ dbRef.on("value",function(snapshot)
   	document.getElementById('studyField').innerHTML =
 	`<div>${curStudy[vocabSet][i].pinyin}</div>
 	<h2 id"character">${curStudy[vocabSet][i].hanzi}</h2>`;
+  document.getElementById('studyTitle').innerHTML = `
+  Level ${vocabSet+1} Study`;
 
 	document.getElementById('transField').innerHTML = showTrans();
  }
+  
 
  	function showTrans(){
  		var temp='';

@@ -12,7 +12,7 @@ app.get('/', function(req,res){
 	console.log('get to homepage');
 	res
 		.status(200)
-		.sendFile('homepage.html', {root: __dirname});
+		.sendFile('homepage.html', {root: path.join(__dirname,'./homepage')});
 });
 
 app.get('/auth', function(req,res){
