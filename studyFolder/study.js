@@ -1,4 +1,17 @@
 firebaseInit();
+document.querySelector('.content').innerHTML=`
+<audio id="aud" autoplay="autoplay">
+  <source id="src" type="audio/mpeg" src="">
+</audio>
+<button type="button" name="openbutton" onclick="openNav()" id="openButton" style="display:none" >></button>
+<h1 id="studyTitle">Level 1 Study</h1>
+<script src="/navigationShift.js"></script>
+<input type="button" id="clickP" value="Previous">
+<input type="button" id="clickN" value="Next">
+<input type="button" id="soundButton" value="speak">
+<div id="studyField"> </div>
+<div id="transField"> </div>
+`;
 var dbRef=firebase.database().ref("vocab");
 dbRef.on("value",function(snapshot)
 {
@@ -25,7 +38,7 @@ dbRef.on("value",function(snapshot)
 
 	document.getElementById('transField').innerHTML = showTrans();
  }
-  
+
 
  	function showTrans(){
  		var temp='';

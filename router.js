@@ -37,9 +37,17 @@ app.get('/study',function(req,res){
 app.get('/vocab/study/*',function(req,res){
 	console.log('get to study')
 	res.status(200)
-		 .sendFile('study.html',{root: path.join(__dirname,'./study')});
+		 .sendFile('study.html',{root: path.join(__dirname,'./studyFolder')});
 			 //.send('study set');
 });
+
+app.get('/test',function(req,res){
+	console.log('get to testpage')
+	res.status(200)
+		 .sendFile('test.html',{root: __dirname});
+			 //.send('study set');
+});
+
 
 
 var server = app.listen(app.get('port'),function(){

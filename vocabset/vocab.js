@@ -10,7 +10,7 @@ dbRef.on("value",function(snapshot)
   var leftside=Object.keys(vocabListAll); //only array with level name
   var rightside=Object.values(vocabListAll);  //json for the rest of db
   //add picture of different levelset
-  document.getElementById('vocabField').innerHTML=
+  document.querySelector('.content').innerHTML=
   `<div class='char-book'>
   ${leftside.map(function(levelset,index){
     totalLevelSet=index;
