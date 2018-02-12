@@ -1,4 +1,3 @@
-firebaseInit();
 document.querySelector('.content').innerHTML=`
 <h1>Welcome to Simple Chinese</h1>
 <p> Thank for visiting Simple Chinese, Here are some description about our product: </p>
