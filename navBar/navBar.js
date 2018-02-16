@@ -1,11 +1,11 @@
 document.querySelector('.sidenav').innerHTML=`
 <button type="button" name="button" id="closeNav" onclick="closeNav()"><</button>
-  <a id="welcomeButton">Welcome</a>
-  <a>Profile</a>
-  <a id="studyButton">Study</a>
-  <a>Quiz</a>
-  <a>Review</a>
-  <a>Contact</a>
+  <a href="/" id="welcomeButton">Welcome</a>
+  <a id='profileButton' class="grayClass">Profile</a>
+  <a id="studyButton" class="grayClass">Study</a>
+  <a id="quizButton" class="grayClass">Quiz</a>
+  <a id="reviewButton" class="grayClass">Review</a>
+  <a id="contactButton">Contact</a>
   <link rel="stylesheet" href="/navBar/navBar.css">
   `;
   function openNav(){
@@ -18,9 +18,3 @@ document.querySelector('.sidenav').innerHTML=`
   	document.querySelector('.content').style.marginLeft="0";
   	document.getElementById('openButton').style.display="block";
   }
-  document.getElementById('studyButton').addEventListener('click',function(){
-    window.location.href  ='/vocab'
-  });
-  document.getElementById('welcomeButton').addEventListener('click',function(){
-    window.location.href  ='/'
-  });

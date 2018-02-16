@@ -1,6 +1,3 @@
-// console.log('something');
-// document.getElementById('vocabField').innerHTML='not hello';
-firebaseInit();
 var dbRef=firebase.database().ref("vocab");
 var totalLevelSet=0;
 //this function is called when firebase return db

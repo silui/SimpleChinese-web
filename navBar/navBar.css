@@ -18,6 +18,11 @@
     background-color: #ddd;
     color: black;
 }
+
+.sidenav .grayClass{
+  color: grey;
+}
+
 #openButton
 {
   top: 0px;

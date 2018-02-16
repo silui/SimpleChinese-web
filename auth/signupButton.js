@@ -5,16 +5,17 @@ document.querySelector("#auth").innerHTML=`
     <span class="close">&times;</span>
     <img src="https://cdn0.iconfinder.com/data/icons/flat-security-icons/512/lock.png" class="avatar">
     <h1>Login here</h1>
-    <form>
+    <div>
       <p>Email address</p>
       <input type="text" name="" placeholder="Enter email" id="emailField">
       <p>Password</p>
       <input type="password" name="" placeholder="Enter Password" id="passwordField">
-      <input type="submit" name="" value="Login">
+      <!-- <input type="submit" name="" value="Login"> -->
+      <button type="button" id="loginButton">Login</button>
       <button type="button" id="signupButton">Signup</button><br>
       <a href="#"> Lost your account?</a>
       <a href="#"> Don't have an account?</a>
-    </form>
+    </div>
     <link rel="stylesheet" href="/auth/signupButton.css">
     </div>
   </div>
@@ -25,8 +26,8 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
   if(btn.innerHTML==="SignOut")
   {
-    firebase.auth().signOut;
-     window.location.reload(false);
+    console.log("signout detected");
+    firebase.auth().signOut();
   }
   else
   {

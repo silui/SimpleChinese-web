@@ -1,4 +1,3 @@
-firebaseInit();
 document.querySelector('.content').innerHTML=`
 <audio id="aud" autoplay="autoplay">
   <source id="src" type="audio/mpeg" src="">
