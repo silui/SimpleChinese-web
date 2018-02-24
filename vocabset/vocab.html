@@ -15,7 +15,11 @@
 <script src="/navBar/navBar.js"></script>
 <script src="/auth/signupButton.js"></script>
 <script src="/firebase/auth.js"></script>
-<script src="/vocabset/vocab.js"></script>
+<script
+  src="https://code.jquery.com/jquery-1.9.1.min.js"
+  integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+  crossorigin="anonymous"></script>
+  <script src="/vocabset/vocab.js"></script>
 <style>
 * {
     box-sizing: border-box;
@@ -25,8 +29,28 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .content {
+    position: relative;
     margin-left: 200px;
     padding-left: 0x;
     margin-top: 30px;
 }
+.stack {
+}
+
+.stack-item {
+    border: 2px solid #000;
+    background-color: #FFF;
+    width: 300px;
+    height: 300px;
+    padding: 0px;
+    margin: 0;
+}
+
+.stack-index {
+    float: right;
+    font-weight: bold;
+    padding: 5px 5px 0 0;
+    display: none;
+}
+
 </style>
