@@ -17,16 +17,11 @@ dbRef.on("value",function(snapshot)
   var vocabListAll = snapshot.val();
   var levels = Object.keys(vocabListAll);
   var curStudy = Object.values(vocabListAll);
-
-
-
   var i = 0; //No. of char in the list
   var myMainSite = window.location.pathname;
   var splitUrl = myMainSite.split('/vocab/study/');
   var vocabSet = splitUrl[1]-1;
   var vocabSetLength = Object.values(curStudy[vocabSet]).length;
-
-  //  console.log(vocabSetLength);
 
   function showChar(){
   	document.getElementById('studyField').innerHTML =

@@ -41,11 +41,23 @@ app.get('/vocab/study/*',function(req,res){
 			 //.send('study set');
 });
 
+app.get('/quiz',function(req,res){
+	console.log('get to quiz')
+	res.status(200)
+		 .sendFile('quizselect.html',{root: path.join(__dirname,'./quizFolder')});
+});
+
+app.get('/quiz/level*-*',function(req,res){
+	console.log('get to actual quiz')
+	res.status(200)
+		 .sendFile('quiz.html',{root: path.join(__dirname,'./quizFolder')});
+});
+
+
 app.get('/test',function(req,res){
 	console.log('get to testpage')
 	res.status(200)
-		 .sendFile('test.html',{root: __dirname});
-			 //.send('study set');
+			 .send('test');
 });
 
 
