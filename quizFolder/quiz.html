@@ -10,10 +10,11 @@
     <img src="https://png.icons8.com/material/540/menu.png" height="30px" width="30px" onclick="openNav()" id="openButton" style="display: none">
     <div class="content">
       <div id="charField"></div>
-      <button type="button" class="answer" answerId="1"></button>
-      <button type="button" class="answer" answerId="2"></button>
-      <button type="button" class="answer" answerId="3"></button>
-      <button type="button" class="answer" answerId="4"></button>
+      <div class="translationsDisplayField" id="tdf1"><div class="textField"></div><button type="button" class="answer" answerId="1">select</button></div>
+      <div class="translationsDisplayField" id="tdf2"><div class="textField"></div><button type="button" class="answer" answerId="2">select</button></div>
+      <div style='clear:both'></div>
+      <div class="translationsDisplayField" id="tdf3"><div class="textField"></div><button type="button" class="answer" answerId="3">select</button></div>
+      <div class="translationsDisplayField" id="tdf4"><div class="textField"></div><button type="button" class="answer" answerId="4">select</button></div>
     </div>
   </body>
 </html>
@@ -34,5 +35,55 @@ body {
     margin-left: 200px;
     padding-left: 0x;
     margin-top: 30px;
+}
+#charField{
+  font-size: 30px;
+  text-align: center;
+}
+
+.translationsDisplayField
+{
+  position: relative;
+  margin: 15px;
+  height: 250px;
+  width: 300px;
+  border-style: solid;
+  /* border-color:coral; */
+  z-index: 1;
+}
+.textField
+{
+  height: 230px;
+  width: 290px;
+  /* border-style: dotted;
+  border-color:blue; */
+  overflow-y: scroll;
+  z-index: 2;
+}
+#tdf1
+{
+  float: left;
+  margin-left: 200px;
+}
+#tdf2
+{
+  float: right;
+  margin-right: 200px;
+}
+#tdf3
+{
+  float: left;
+  margin-left: 200px;
+}
+#tdf4
+{
+  float: right;
+  margin-right: 200px;
+}
+.answer
+{
+  position: absolute;
+  bottom: -27px;
+  left: 115px;
 }
 </style>

@@ -10,18 +10,15 @@ dbRef.on("value",function(snapshot)
   var levelArray = curStudy[targetLevel];
   tempArray = Object.values(levelArray)
   globalWholeArray= tempArray.slice(targetSetStart,targetSetStart+25);
-  var buttonArray = document.getElementsByClassName('answer');
-  for(var i=0; i<buttonArray.length; i++)
+  var textField = document.getElementsByClassName('answer');
+  for(var i=0; i<textField.length; i++)
   {
-    buttonArray[i].addEventListener("click",function()
+    textField[i].addEventListener("click",function()
     {
       next();
     });
   }
   next();
-  // var answerBoxes = document.getElementsByClassName('answer');
-  // var translationArray = getFourTranslation("good",tempArray);
-  // assignAnswer(answerBoxes,translationArray)
 });
 var tempArray = [];
 var globalWholeArray=[];
@@ -33,12 +30,10 @@ function next()
   }
   else {
     iter++;
-    // console.log(globalWholeArray[iter]);
     setChineseChar(globalWholeArray[iter].hanzi);
     var correctAnswer = globalWholeArray[iter].translations;
-    // var answerBoxes = document.getElementsByClassName('answer');
     var translationArray = getFourTranslation(correctAnswer,tempArray);
-    assignAnswer(document.getElementsByClassName('answer'),translationArray)
+    assignAnswer(document.getElementsByClassName('textField'),translationArray)
   }
 }
 
@@ -46,11 +41,17 @@ function setChineseChar(inputChar)
 {
   document.getElementById('charField').innerHTML=inputChar;
 }
-function assignAnswer(buttonArray, answerArray)
+function assignAnswer(textField, answerArray)
 {
-  for(var i=0; i<buttonArray.length; i++)
+  for(var i=0; i<textField.length; i++)
   {
-    buttonArray[i].innerText=answerArray[i];
+    // textField[i].innerHTML=answerArray[i]+"<br>";
+    textField[i].innerHTML='';
+
+    for(var k=0; k<answerArray[i].length;k++)
+    {
+      textField[i].innerHTML+=answerArray[i][k]+"<br>";
+    }
   }
 }
 
