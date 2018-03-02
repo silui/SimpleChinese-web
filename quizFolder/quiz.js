@@ -10,29 +10,32 @@ dbRef.on("value",function(snapshot)
   var levelArray = curStudy[targetLevel];
   tempArray = Object.values(levelArray)
   globalWholeArray= tempArray.slice(targetSetStart,targetSetStart+25);
-  var textField = document.getElementsByClassName('answer');
-  for(var i=0; i<textField.length; i++)
+  var buttonArr = document.getElementsByClassName('answer');
+  for(var i=0; i<buttonArr.length; i++)
   {
-    textField[i].addEventListener("click",function()
+    buttonArr[i].addEventListener("click",function()
     {
+      if(this.getAttribute("answerid")==correctbox)
+        correctness++;
       next();
     });
   }
   next();
 });
+var correctness = 0;
 var tempArray = [];
 var globalWholeArray=[];
 var iter=-1;
+var correctbox;
 function next()
 {
-  if(iter===24){
-    window.location.href='./'
+  if(iter===globalWholeArray.length-1){
+    document.getElementsByClassName("content")[0].innerHTML=correctness+`/25<br><button onclick="window.location.href='/quiz'">Continue</button>`;
   }
   else {
     iter++;
     setChineseChar(globalWholeArray[iter].hanzi);
-    var correctAnswer = globalWholeArray[iter].translations;
-    var translationArray = getFourTranslation(correctAnswer,tempArray);
+    var translationArray = getFourTranslation(globalWholeArray[iter].translations,globalWholeArray[iter].id,tempArray);
     assignAnswer(document.getElementsByClassName('textField'),translationArray)
   }
 }
@@ -57,33 +60,35 @@ function assignAnswer(textField, answerArray)
 
 
 function shuffle(a) {
+  var correctOne=a[0];
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [a[i], a[j]] = [a[j], a[i]];
     }
+    for(var k=0; k<a.length; k++)
+    {
+      if(a[k]===correctOne)
+        correctbox=k+1;
+    }
+    // console.log(a);
     return a;
 }
 
-function alreadyExist(inputArray, target)
-{
-  for(var i=0; i<inputArray; i++)
-  {
-    if(inputArray[i]==target)
-      return true;
-  }
-  return false;
-}
 
-function getFourTranslation(correct,vocabSet)
+function getFourTranslation(correct,correctId,vocabSet)
 {
   var finalarray=[];
   finalarray.push(correct);
   while(finalarray.length!=4)
   {
     var random=Math.floor(Math.random() * vocabSet.length);
-    var newdef=vocabSet[random].translations;
-    if(!alreadyExist(finalarray,newdef))
-      finalarray.push(newdef);
+    if(vocabSet[random].translations!=null)
+    {
+      var newdef=vocabSet[random].translations;
+      var newdefId=vocabSet[random].id;
+      if(correctId!=newdefId)
+        finalarray.push(newdef);
+    }
   }
   return shuffle(finalarray);
 }
