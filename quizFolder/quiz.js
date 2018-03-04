@@ -17,11 +17,17 @@ dbRef.on("value",function(snapshot)
     {
       if(this.getAttribute("answerid")==correctbox)
         correctness++;
+      // console.log(this.parentNode.children[0].innerText);
+      resultArray[2].push(this.parentNode.children[0].innerText);
       next();
     });
   }
   next();
 });
+var resultArray = [];
+resultArray.push([]);
+resultArray.push([]);
+resultArray.push([]);
 var correctness = 0;
 var tempArray = [];
 var globalWholeArray=[];
@@ -30,7 +36,14 @@ var correctbox;
 function next()
 {
   if(iter===globalWholeArray.length-1){
-    document.getElementsByClassName("content")[0].innerHTML=correctness+`/25<br><button onclick="window.location.href='/quiz'">Continue</button>`;
+    var tableHTML=`<table border="1"><tr><th>character</th><th>correct answer</th><th>your pick</th></tr>`;
+    for(var i=0; i<resultArray[0].length;i++)
+    {
+      tableHTML+=`<tr><td>${resultArray[0][i]}</td><td>${resultArray[1][i]}</td><td>${resultArray[2][i]}</td></tr>`;
+    }
+    tableHTML+=`<table>${correctness}/25 is correct <button onclick="window.location.href='./'">Go Back</button>`;
+    document.getElementsByClassName("content")[0].innerHTML=tableHTML;
+    updateScore(firebase.auth().currentUser.uid,splitUrl[1],splitUrl[2],correctness);
   }
   else {
     iter++;
@@ -43,14 +56,13 @@ function next()
 function setChineseChar(inputChar)
 {
   document.getElementById('charField').innerHTML=inputChar;
+  resultArray[0].push(inputChar);
 }
 function assignAnswer(textField, answerArray)
 {
   for(var i=0; i<textField.length; i++)
   {
-    // textField[i].innerHTML=answerArray[i]+"<br>";
     textField[i].innerHTML='';
-
     for(var k=0; k<answerArray[i].length;k++)
     {
       textField[i].innerHTML+=answerArray[i][k]+"<br>";
@@ -79,6 +91,7 @@ function getFourTranslation(correct,correctId,vocabSet)
 {
   var finalarray=[];
   finalarray.push(correct);
+  resultArray[1].push(correct);
   while(finalarray.length!=4)
   {
     var random=Math.floor(Math.random() * vocabSet.length);
@@ -91,4 +104,10 @@ function getFourTranslation(correct,correctId,vocabSet)
     }
   }
   return shuffle(finalarray);
+}
+
+function updateScore(userID,level,set,score)
+{
+  var dbRef=firebase.database().ref(`user/${userID}/${level}`);
+  dbRef.update({[set]:score});
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<body bgcolor="#E6E6FA">
+  <title>Welcome to SimpleChinese</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <body>
+    <div class="sidenav"></div>
+    <div id="auth"></div>
+    <img src="https://png.icons8.com/material/540/menu.png" height="30px" width="30px" onclick="openNav()" id="openButton" style="display: none">
+    <div class="content"></div>
+  </body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script src="/navBar/navBar.js"></script>
+<script src="/auth/signupButton.js"></script>
+<script src="/firebase/auth.js"></script>
+<script src="/profile/profile.js"></script>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content {
+    position: relative;
+    margin-left: 200px;
+    padding-left: 0x;
+    margin-top: 30px;
+}
+.stack {
+}
+
+.stack-item {
+    border: 2px solid #000;
+    background-color: #FFF;
+    width: 300px;
+    height: 400px;
+    padding: 0px;
+    margin: 0;
+}
+
+.stack-index {
+    float: right;
+    font-weight: bold;
+    padding: 5px 5px 0 0;
+    display: none;
+}
+
+</style>
