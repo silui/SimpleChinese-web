@@ -9,6 +9,7 @@ document.querySelector('.content').innerHTML=`
 <input type="button" id="clickN" value="Next">
 <input type="button" id="soundButton" value="speak">
 <div id="studyField"> </div>
+<div id="character-target-div"></div>
 <div id="transField"> </div>
 `;
 var dbRef=firebase.database().ref("vocab");
@@ -29,8 +30,9 @@ dbRef.on("value",function(snapshot)
 	<h2 id"character">${curStudy[vocabSet][i].hanzi}</h2>`;
   document.getElementById('studyTitle').innerHTML = `
   Level ${vocabSet+1} Study`;
-
 	document.getElementById('transField').innerHTML = showTrans();
+  console.log(curStudy[vocabSet][i].hanzi);
+  animat(curStudy[vocabSet][i].hanzi,0);
  }
 
 
@@ -71,10 +73,27 @@ dbRef.on("value",function(snapshot)
     aud.load();
     return aud.play();
   }
-
-  //console.log(curStudy[tempValueSetLater][i].hanzi);
   document.getElementById("clickP").onclick = function(){clickForPre()};
   document.getElementById("clickN").onclick = function(){clickForNext()};
   document.getElementById("soundButton").onclick = function(){clickForSound()};
   showChar();
 });
+function animat(zhText, i) {
+    const target=document.getElementById('character-target-div');
+    if (i === zhText.length) return;
+    const cha = zhText.charAt(i);
+    while (target.firstChild)
+        target.removeChild(target.firstChild);
+    let w = new HanziWriter(target, cha, {
+        width: 100,
+        height: 100,
+        padding: 5
+    })
+    w.animateCharacter({
+        onComplete: function () {
+            setTimeout(function () {
+                animat(zhText, i + 1);
+            }, 1);
+        }
+    });
+}
