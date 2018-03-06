@@ -1,4 +1,56 @@
 <!DOCTYPE html>
 <html>
-	yibo is the greatest!
+
+<head>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+  <div id="sidenav">
+    <a href="index.html">Welcome</a>
+    <a href="#profile">Profile</a>
+    <a href="study.html">Study</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="#preview">Preview</a>
+    <a href="#contact">Contact</a>
+    <div>
+      <a class="collapse"> &lt;</a>
+    </div>
+  </div>
+  <div class="expand">
+    <a id="expand" class="button" hidden>&gt;</a>
+  </div>
+  <div id="main">
+    <header>
+      <a class="button ">Login</a>
+    </header>
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="carousel-images">
+          <img src="images/1.jpg " alt="1.jpg ">
+          <img src="images/2.jpg " alt="2.jpg ">
+          <img src="images/3.jpg " alt="3.jpg ">
+          <img src="images/4.jpg " alt="4.jpg ">
+        </div>
+      </div>
+      <div class="carousel-indicators-wrapper ">
+        <div class="carousel-indicators ">
+          <div class="active" data-index="0 "></div>
+          <div data-index="1 "></div>
+          <div data-index="2 "></div>
+          <div data-index="3 "></div>
+        </div>
+      </div>
+      <div class="carousel-control ">
+        <span class="next"></span>
+        <span class="prev"></span>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+
 </html>
