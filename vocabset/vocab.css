@@ -1,0 +1,18 @@
+.levels {
+  padding: 0 20px;
+}
+
+.levels a {
+  display: inline-block;
+  overflow: hidden;
+  margin: 10px;
+}
+
+/* .levels img {
+  width: 100px;
+  height: 150px;
+} */
+
+.level {
+  text-align: center;
+}

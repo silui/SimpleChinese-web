@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+
   document.getElementsByClassName('collapse')[0].onclick = function () {
     document.getElementById('sidenav').classList.add('collapsed');
     setTimeout(function() {
@@ -12,4 +12,3 @@ window.addEventListener('load', function () {
     document.getElementById('main').style.marginLeft = '256px';
     document.getElementById('expand').hidden = true;
   }
-})

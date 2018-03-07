@@ -30,11 +30,6 @@ document.getElementById('loginButton').addEventListener("click", function()
     {
       alert(error.message);
     });
-    //location.reload();
-    // firebase.auth().createUserWithEmailAndPassword(email,password).catch(function(error)
-    // {
-    //   alert(error.message);
-    // });
   }
 });
 function userSignedIn()
@@ -43,10 +38,26 @@ function userSignedIn()
   document.querySelector('#sidenav').innerHTML=`
   <a href="/" id="welcomeButton">Welcome</a>
   <a href="/profile" id='profileButton' class="grayClass">Profile</a>
-  <a href="/study" id="studyButton" class="grayClass">Study</a>
+  <a href="/vocab" id="studyButton" class="grayClass">Study</a>
   <a href="/quiz" id="quizButton" class="grayClass">Quiz</a>
   <a href="/" id="contactButton">Contact</a>
+  <div>
+    <a class="collapse"> &lt;</a>
+  </div>
     `;
+    document.getElementsByClassName('collapse')[0].onclick = function () {
+      document.getElementById('sidenav').classList.add('collapsed');
+      setTimeout(function() {
+        document.getElementById('main').style.marginLeft = '0px';
+        document.getElementById('expand').hidden = false;
+      }, 300);
+    };
+    document.getElementById('expand').onclick = function () {
+      document.getElementById('sidenav').classList.toggle('collapsed');
+      document.getElementById('main').style.marginLeft = '256px';
+      document.getElementById('expand').hidden = true;
+    };
+
 }
 firebase.auth().onAuthStateChanged(function(user) {
   console.log("auth changed");
@@ -55,6 +66,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user!=null)
     {
       userSignedIn();
+    }
+    else if(location.pathname.substring(0,6)=="/vocab"||location.pathname.substring(0,5)=="/quiz")
+    {
+      location.href="/";
     }
     firstauthchange=false;
   }
