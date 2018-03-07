@@ -12,11 +12,12 @@ app.get('/', function(req,res){
 	console.log('get to homepage');
 	res
 		.status(200)
-		.sendFile('homepage.html', {root: path.join(__dirname,'./homepage')});
+		.sendFile('homepage2.html', {root: path.join(__dirname,'./homepage')});
 });
 
+
+
 app.get('/profile', function(req,res){
-	console.log('get to homepage');
 	res
 		.status(200)
 		.sendFile('profile.html', {root: path.join(__dirname,'./profile')});
@@ -57,7 +58,8 @@ app.get('/quiz/level*-*',function(req,res){
 app.get('/test',function(req,res){
 	console.log('get to testpage')
 	res.status(200)
-			 .send('test');
+					.sendFile('homepage2.html', {root: path.join(__dirname,'./homepage')});
+			 // .send('test');
 });
 
 var server = app.listen(app.get('port'),function(){

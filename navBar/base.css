@@ -1,0 +1,67 @@
+html body {
+  margin: 0;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+#sidenav {
+  width: 256px;
+  background-color: #2e2e2e;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-top: 50px;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+#sidenav.collapsed {
+  width: 0px;
+}
+
+#sidenav a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 25px;
+  padding: 20px 0;
+  color: #bbb;
+}
+
+#sidenav a:hover {
+  color: #fff;
+}
+
+#sidenav .collapse {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.expand {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.expand a {
+  font-size: 20px;
+}
+
+header {
+  height: 50px;
+  padding: 20px;
+  text-align: right;
+}
+
+#main {
+  margin-left: 256px;
+}
+
+.control-button {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}

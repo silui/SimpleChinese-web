@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to SimpleChinese</title>
+</head>
+<body>
+  <div id="sidenav">
+    <a href="/" id="welcomeButton">Welcome</a>
+    <a id="contactButton">Contact</a>
+    <div>
+      <a class="collapse"> &lt;</a>
+    </div>
+  </div>
+  <div class="expand">
+    <a id="expand" class="button" hidden>&gt;</a>
+  </div>
+  <div id="main">
+    <header>
+      <div id="auth"></div>
+    </header>
+    <h1>Welcome to Simple Chinese</h1>
+
+    <div class="carousel-wrapper">
+      <div class="carousel">
+        <div class="carousel-images">
+          <img src="images/1.jpg " alt="1.jpg ">
+          <img src="images/2.jpg " alt="2.jpg ">
+          <img src="images/3.jpg " alt="3.jpg ">
+          <img src="images/4.jpg " alt="4.jpg ">
+        </div>
+      </div>
+      <div class="carousel-indicators-wrapper ">
+        <div class="carousel-indicators ">
+          <div class="active" data-index="0 "></div>
+          <div data-index="1 "></div>
+          <div data-index="2 "></div>
+          <div data-index="3 "></div>
+        </div>
+      </div>
+      <div class="carousel-control ">
+        <span class="next"></span>
+        <span class="prev"></span>
+      </div>
+      <p> Thank for visiting Simple Chinese, Here are some description about our product: </p>
+        <ol>
+          <li>Choose diffculties</li>
+          <li>Study Chinese</li>
+          <li>View what you have learned</li>
+          <li>Quiz youself about what you have learned</li>
+          <li>See what you got wrong</li>
+          <li>Quiz youself about what you got wrong</li>
+          <li>Have your own study profile</li>
+        <ol>
+    </div>
+  </div>
+  <script src="/auth/signupButton.js"></script>
+  <link rel="stylesheet" href="navBar/base.css">
+  <link rel="stylesheet" href="/homepage/components.css">
+  <script src="homepage/homepage2.js"></script>
+  <script src="homepage/carousel.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <!-- <script src="/navBar/navBar.js"></script> -->
+  <script src="/firebase/auth.js"></script>
+  <!-- <script src="/homepage/homepage.js"></script> -->
+</body>
+
+</html>

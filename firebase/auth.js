@@ -40,18 +40,13 @@ document.getElementById('loginButton').addEventListener("click", function()
 function userSignedIn()
 {
   document.getElementById('myBtn').innerHTML="SignOut";
-  var temp=document.getElementById('profileButton');
-  temp.style.color="white";
-  temp.href="/profile";
-  temp=document.getElementById('studyButton');
-  temp.style.color="white";
-  temp.href="/vocab";
-  temp=document.getElementById('quizButton');
-  temp.style.color="white";
-  temp.href="/quiz";
-  temp=document.getElementById('reviewButton');
-  temp.style.color="white";
-  temp.href="/review";
+  document.querySelector('#sidenav').innerHTML=`
+  <a href="/" id="welcomeButton">Welcome</a>
+  <a href="/profile" id='profileButton' class="grayClass">Profile</a>
+  <a href="/study" id="studyButton" class="grayClass">Study</a>
+  <a href="/quiz" id="quizButton" class="grayClass">Quiz</a>
+  <a href="/" id="contactButton">Contact</a>
+    `;
 }
 firebase.auth().onAuthStateChanged(function(user) {
   console.log("auth changed");
