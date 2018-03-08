@@ -1,4 +1,88 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to SimpleChinese</title>
+</head>
+<body>
+  <div id="sidenav">
+    <a href="/" id="welcomeButton">Welcome</a>
+    <a id="contactButton">Contact</a>
+    <div>
+      <a class="collapse"> &lt;</a>
+    </div>
+  </div>
+  <div class="expand">
+    <a id="expand" class="button" hidden>&gt;</a>
+  </div>
+  <div id="main">
+    <header>
+      <div id="auth"></div>
+    </header>
+    <audio id="aud" autoplay="autoplay">
+      <source id="src" type="audio/mpeg" src="">
+    </audio>
+      <h2 id="studyTitle" class="level">Level(1) Study</h2>
+          <div class="title" id="studyField">
+            <span>漢</span>
+          </div>
+            <a class="button" id="soundButton">Sound</a>
+          <p class="explanation" id="transField">
+            <strong>Explanation: </strong> Han is a difficult concept which requires an understanding of the context in which it is used.
+            Han is frequently translated as sorrow, spite, rancor, regret, resentment or grief, among many other attempts to explain
+            a concept that has no English equivalent. Han is an inherent characteristic of the Korean character and as such finds
+            expression, implied or explicit, in nearly every aspect of Korean life and culture.
+          </p>
+          <div class="steps">
+            <div id="character-target-div"></div>
+            <a class="button" id="replayButton">Replay</a>
+          </div>
+          <div class="control-button">
+            <a class="button" id="clickP">Previous</a>
+            <a class="button" id="clickN">Next</a>
+          </div>
+  </div>
+  <script src="/auth/signupButton.js"></script>
+  <link rel="stylesheet" href="/navBar/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@0.4/dist/hanzi-writer.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script src="/firebase/auth.js"></script>
+  <script src="/studyFolder/study.js"></script>
+</body>
+</html>
+<style media="screen">
+.levels {
+padding: 0 20px;
+}
+
+.levels a {
+display: inline-block;
+overflow: hidden;
+margin: 10px;
+}
+
+
+.level {
+text-align: center;
+}
+
+.title {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.title span {
+font-size: 50px;
+font-weight: bolder;
+}
+
+
+.explanation, .steps {
+padding: 10px 20px;
+margin: 0 auto;
+}
+</style>
+<!-- <!DOCTYPE html>
 <body bgcolor="#E6E6FA">
   <title>Welcome to SimpleChinese</title>
   <meta charset="utf-8">
@@ -30,4 +114,4 @@ body {
     padding-left: 0x;
     margin-top: 30px;
 }
-</style>
+</style> -->

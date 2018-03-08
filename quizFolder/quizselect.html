@@ -1,4 +1,72 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to SimpleChinese</title>
+</head>
+<body>
+  <div id="sidenav">
+    <a href="/" id="welcomeButton">Welcome</a>
+    <a id="contactButton">Contact</a>
+    <div>
+      <a class="collapse"> &lt;</a>
+    </div>
+  </div>
+  <div class="expand">
+    <a id="expand" class="button" hidden>&gt;</a>
+  </div>
+  <div id="main">
+    <header>
+      <div id="auth"></div>
+    </header>
+    <div id="content"></div>
+  </div>
+  <script src="/auth/signupButton.js"></script>
+  <link rel="stylesheet" href="/navBar/base.css">
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script src="/firebase/auth.js"></script>
+  <script src="/quizFolder/quizselect.js"></script>
+  <!-- <script src="/vocabset/vocab.js"></script> -->
+</body>
+</html>
+<style media="screen">
+.levels {
+display: flex;
+align-items: flex-start;
+flex-wrap: wrap;
+}
+
+.level {
+display: inline-block;
+width: 150px;
+text-align: center;
+}
+
+.level .li {
+padding: 10px 0;
+}
+
+.head {
+text-align: center;
+}
+
+.head span {
+margin: 0 10px;
+}
+
+.title {
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.title span {
+font-size: 50px;
+font-weight: bolder;
+}
+
+
+</style>
+<!-- <!DOCTYPE html>
 <body bgcolor="#E6E6FA">
   <title>Welcome to SimpleChinese</title>
   <meta charset="utf-8">
@@ -29,4 +97,4 @@ body {
     padding-left: 0x;
     margin-top: 30px;
 }
-</style>
+</style> -->
