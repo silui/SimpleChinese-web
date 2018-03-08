@@ -40,13 +40,14 @@ dbRef.on("value",function(snapshot)
 {
   var vocabListAll = snapshot.val();
   var curStudy = Object.values(vocabListAll);
-  var tempInnerHtml='';
+  var tempInnerHtml=`<div class="levels">`;
   for(var i=0; i<curStudy.length;i++)
   {
     tempInnerHtml+=`<div class="level"><h1>Level ${i+1}</h1><div>`;
     tempInnerHtml+=buildTable(curStudy[i],Object.keys(vocabListAll)[i]);
     tempInnerHtml+='</div></div>';
   }
+  tempInnerHtml+=`</div>`;
   document.querySelector('#content').innerHTML=tempInnerHtml;
 });
 
@@ -66,12 +67,12 @@ function buildTable(inputArray,vocabSet)
           <input type="checkbox" onclick="return false;" class="completedBox" level="${levelNum}" set="${i}">`;
     if(i==setCount && lastSetLength!=0)
     {
-        returnString+=`<span class="scoreClass">0/${lastSetLength}</span></div>`;
+        returnString+=`<span class="scoreClass">0/${lastSetLength}</span>`;
     }
     else {
-        returnString+=`<span class="scoreClass">0/25</span></div>`;
+        returnString+=`<span class="scoreClass">0/25</span>`;
     }
-
+    returnString+=`<a class="button" onclick="removeScore(this,${levelNum},${i})">Erase</a></div>`;
     // returnString+=`<tr>
     //               <td><input type="checkbox" onclick="return false;" class="completedBox" level="${levelNum}" set="${i}"></td>
     //               <td>${vocabSet}</td>
@@ -85,7 +86,7 @@ function buildTable(inputArray,vocabSet)
 function assignBoxAndScore(db,boxArr,scoreArr)
 {
   var boxIter=0;
-  for(var l=1;l<db.length+1;l++)
+  for(var l=1;l<6;l++)
   {
     if(db[l]!=null)
     {
@@ -103,4 +104,21 @@ function assignBoxAndScore(db,boxArr,scoreArr)
       }
     }
   }
+}
+
+function removeScore(buttonDom,level,vocabSet)
+{
+  var uid=firebase.auth().currentUser.uid;
+  var dbref=firebase.database().ref(`user/${uid}/${level}/${vocabSet}`);
+  dbref.remove();
+  var parent=buttonDom.parentNode;
+  parent.childNodes[6].innerHTML=stripScore(parent.childNodes[6].innerHTML);
+  parent.childNodes[5].checked=false;
+
+}
+
+function stripScore(inputText)
+{
+  var outOf=inputText.split('/')[1];
+  return `0/${outOf}`;
 }

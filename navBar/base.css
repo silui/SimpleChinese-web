@@ -4,8 +4,14 @@ html body {
   min-height: 100vh;
 }
 
+body {
+  background-image: url(/images/bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 #sidenav {
-  width: 256px;
+  width: 200px;
   background-color: #2e2e2e;
   position: fixed;
   top: 0;
@@ -26,6 +32,12 @@ html body {
   font-size: 25px;
   padding: 20px 0;
   color: #bbb;
+  border-top: 1px solid #bbb;
+}
+
+#sidenav a:nth-last-child(2) {
+  border-bottom: 1px solid #bbb;
+
 }
 
 #sidenav a:hover {

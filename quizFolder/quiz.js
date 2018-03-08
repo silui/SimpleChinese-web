@@ -82,7 +82,6 @@ function shuffle(a) {
       if(a[k]===correctOne)
         correctbox=k+1;
     }
-    // console.log(a);
     return a;
 }
 
