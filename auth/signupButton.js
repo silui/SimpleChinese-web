@@ -10,7 +10,6 @@ document.querySelector("#auth").innerHTML=`
       <input type="text" name="" placeholder="Enter email" id="emailField">
       <p>Password</p>
       <input type="password" name="" placeholder="Enter Password" id="passwordField">
-      <!-- <input type="submit" name="" value="Login"> -->
       <button type="button" id="loginButton">Login</button>
       <button type="button" id="signupButton">Signup</button><br>
       <a href="#"> Lost your account?</a>
@@ -44,3 +43,14 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+document.getElementById('expand').onclick = function() {
+  document.getElementById('sidenav').classList.toggle('collapsed');
+  document.getElementById('main').classList.toggle('collapsed');
+  document.getElementById('expand').hidden = true;
+  setTimeout(function() {
+    if (sliderApi) {
+      sliderApi.refresh();
+    }
+  }, 300);
+};

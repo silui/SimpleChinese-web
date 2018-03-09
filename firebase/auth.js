@@ -36,27 +36,25 @@ function userSignedIn()
 {
   document.getElementById('myBtn').innerHTML="SignOut";
   document.querySelector('#sidenav').innerHTML=`
-  <a href="/" id="welcomeButton">Welcome</a>
-  <a href="/profile" id='profileButton' class="grayClass">Profile</a>
-  <a href="/vocab" id="studyButton" class="grayClass">Study</a>
-  <a href="/quiz" id="quizButton" class="grayClass">Quiz</a>
-  <a href="/" id="contactButton">Contact</a>
+  <div class="sidenav-item">
+    <a href="/">Welcome</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="/profile">Profile</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="/vocab">Study</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="/quiz">Quiz</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="#contact">Contact</a>
+  </div>
   <div>
-    <a class="collapse"> &lt;</a>
+    <a class="collapse" onclick="collapse()"> &lt;</a>
   </div>
     `;
-    document.getElementsByClassName('collapse')[0].onclick = function () {
-      document.getElementById('sidenav').classList.add('collapsed');
-      setTimeout(function() {
-        document.getElementById('main').style.marginLeft = '0px';
-        document.getElementById('expand').hidden = false;
-      }, 300);
-    };
-    document.getElementById('expand').onclick = function () {
-      document.getElementById('sidenav').classList.toggle('collapsed');
-      document.getElementById('main').style.marginLeft = '256px';
-      document.getElementById('expand').hidden = true;
-    };
 
 }
 firebase.auth().onAuthStateChanged(function(user) {
