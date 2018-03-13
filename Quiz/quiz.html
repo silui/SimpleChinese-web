@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <style type="text/css">
+  .table {
+      width: 60%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      background-color: transparent;
+      border-spacing: 0;
+      border-collapse: collapse;
+      display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+  }
+  .table thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  .table tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+  .levels{
+    width:100%;
+    padding-left:20px
+  }
+  .level{
+    width:100%;
+  }
+  .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 2px solid white;
+}
+h1 {
+  text-align: left;
+}
+
+  </style>
+</head>
+
+<body>
+  <div id="sidenav">
+    <div class="sidenav-item">
+      <a href="index.html">Welcome</a>
+    </div>
+    <div class="sidenav-item">
+      <a href="#profile">Profile</a>
+    </div>
+    <div class="sidenav-item">
+      <a href="study.html">Study</a>
+    </div>
+    <div class="sidenav-item">
+      <a href="quiz.html">Quiz</a>
+    </div>
+    <div class="sidenav-item">
+      <a href="#preview">Preview</a>
+    </div>
+    <div class="sidenav-item">
+      <a href="#contact">Contact</a>
+    </div>
+    <div>
+      <a class="collapse"> &lt;</a>
+    </div>
+  </div>
+  <div id="main">
+    <header>
+      <a class="button ">Log Out</a>
+    </header>
+    <div id="content">
+      <div class="levels">
+        <div class="level">
+          <h1>Level 1</h1>
+          <table class="table">
+             <tbody>
+                <tr>
+                   <td>Set 1</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 2</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 3</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 4</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 5</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+             </tbody>
+          </table>
+          <h1>Level 2</h1>
+          <table class="table">
+             <tbody>
+                <tr>
+                   <td>Set 1</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 2</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 3</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 4</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 5</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+             </tbody>
+          </table>
+          <h1>Level 3</h1>
+          <table class="table">
+             <tbody>
+                <tr>
+                   <td>Set 1</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 2</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 3</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 4</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 5</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 6</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 7</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 8</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 9</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 10</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 11</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 12</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+             </tbody>
+          </table>
+          <h1>Level 4</h1>
+          <table class="table">
+             <tbody>
+                <tr>
+                   <td>Set 1</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 2</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 3</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 4</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 5</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 6</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 7</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 8</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 9</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 10</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 11</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 12</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 13</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 14</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 15</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 16</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 17</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 18</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 19</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 20</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 21</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 22</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 23</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 24</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+             </tbody>
+          </table>
+          <h1>Level 5</h1>
+          <table class="table">
+             <tbody>
+                <tr>
+                   <td>Set 1</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 2</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 3</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 4</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 5</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 6</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 7</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 8</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 9</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 10</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 11</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 12</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 13</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 14</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 15</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 16</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 17</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 18</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 19</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">5/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 20</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 21</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">7/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 22</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 23</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/25</span></td>
+                </tr>
+                <tr>
+                   <td>Set 24</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 25</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 26</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 27</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 28</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 29</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 30</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+                <tr>
+                   <td>Set 31</td>
+                   <td><a class="button" href="/quiz/level1-1">Start</a></td>
+                   <td><input type="checkbox" onclick="return false;" class="completedBox" level="1" set="1"></td>
+                   <td><a onclick="removeScore(this,1,1)">Erase</a></td>
+                   <td><span class="scoreClass">0/24</span></td>
+                </tr>
+             </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="expand">
+    <a id="expand" class="button" hidden>&gt;&gt;&gt;</a>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
