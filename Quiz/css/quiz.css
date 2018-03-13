@@ -1,0 +1,55 @@
+.levels {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+
+.level .li {
+  padding: 10px 0;
+}
+
+.head {
+  text-align: center;
+}
+
+.head span {
+  margin: 0 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title span {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.title img {
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: left;
+  justify-content: center;
+}
+
+.options .option {
+  display: inline-block;
+  max-width: 320px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.1), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
+  margin: 0 10px 10px 0;
+  background-color: white;
+}

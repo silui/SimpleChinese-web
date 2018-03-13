@@ -1,0 +1,122 @@
+<html><head>
+  <title>Welcome to SimpleChinese</title>
+</head>
+<body>
+  <div id="sidenav">
+  <div class="sidenav-item">
+    <a href="index.html">Welcome</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="profile.html">Profile</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="vocab.html">Study</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="quiz.html">Quiz</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="#contact">Contact</a>
+  </div>
+  <div>
+    <a class="collapse" onclick="collapse()"> &lt;</a>
+  </div>
+    </div>
+  <div class="expand">
+    <a id="expand" class="button" hidden="">&gt;</a>
+  </div>
+  <div id="main">
+    <header>
+      <div id="auth">
+<button class="button" id="myBtn">SignOut</button>
+  <div id="myModal" class="modal">
+    <div class="loginbox" style="display: none">
+    <span class="close">×</span>
+    <img src="https://cdn0.iconfinder.com/data/icons/flat-security-icons/512/lock.png" class="avatar">
+    <h1>Login here</h1>
+    <div>
+      <p>Email address</p>
+      <input type="text" name="" placeholder="Enter email" id="emailField">
+      <p>Password</p>
+      <input type="password" name="" placeholder="Enter Password" id="passwordField">
+      <button type="button" id="loginButton">Login</button>
+      <button type="button" id="signupButton">Signup</button><br>
+      <a href="#"> Lost your account?</a>
+      <a href="#"> Don't have an account?</a>
+    </div>
+    <link rel="stylesheet" href="/auth/signupButton.css">
+    </div>
+  </div>
+</div>
+    </header>
+    <div id="content"><div class="levels">
+  <a href="/vocab/study/1"><img src="https://i.imgur.com/qjW4K4d.jpg"></a><a href="/vocab/study/2"><img src="https://i.imgur.com/GPwDQgR.jpg"></a><a href="/vocab/study/3"><img src="https://i.imgur.com/DLjetB5.jpg"></a><a href="/vocab/study/4"><img src="https://i.imgur.com/m8UzMe8.jpg"></a><a href="/vocab/study/5"><img src="https://i.imgur.com/EUdNjDM.jpg"></a>
+  </div> <link rel="stylesheet" href="vocabset/vocab.css">
+</div>
+  </div>
+  <script src="/auth/signupButton.js"></script>
+  <link rel="stylesheet" href="navBar/base.css">
+  <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+  <script src="/firebase/auth.js"></script>
+  <script src="/vocabset/vocab.js"></script>
+
+
+
+
+<!-- <!DOCTYPE html>
+<body bgcolor="#E6E6FA">
+  <title>Welcome to SimpleChinese</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <body>
+    <div class="sidenav"></div>
+    <div id="auth"></div>
+    <img src="https://png.icons8.com/material/540/menu.png" height="30px" width="30px" onclick="openNav()" id="openButton" style="display: none">
+    <div class="content"></div>
+  </body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script src="/navBar/navBar.js"></script>
+<script src="/auth/signupButton.js"></script>
+<script src="/firebase/auth.js"></script>
+<script
+  src="https://code.jquery.com/jquery-1.9.1.min.js"
+  integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="
+  crossorigin="anonymous"></script>
+  <script src="/vocabset/vocab.js"></script>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.content {
+    position: relative;
+    margin-left: 200px;
+    padding-left: 0x;
+    margin-top: 30px;
+}
+.stack {
+}
+
+.stack-item {
+    border: 2px solid #000;
+    background-color: #FFF;
+    width: 300px;
+    height: 400px;
+    padding: 0px;
+    margin: 0;
+}
+
+.stack-index {
+    float: right;
+    font-weight: bold;
+    padding: 5px 5px 0 0;
+    display: none;
+}
+
+</style> -->
+</body></html>
