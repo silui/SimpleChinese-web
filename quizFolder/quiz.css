@@ -1,0 +1,48 @@
+#main
+{
+  margin-top: 10%;
+}
+.options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: left;
+  justify-content: center;
+}
+
+.options .option {
+  display: inline-block;
+  max-width: 320px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.1), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
+  margin: 0 10px 10px 0;
+  background-color: white;
+}
+
+.button {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: white;
+  padding: 5px 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#vocabField
+{
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 80px;
+}
+.options
+{
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 20px;
+}
+
+span
+{
+  display: block
+  width: auto;
+}
