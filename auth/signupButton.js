@@ -44,13 +44,13 @@ window.onclick = function(event) {
     }
 }
 
-document.getElementById('expand').onclick = function() {
-  document.getElementById('sidenav').classList.toggle('collapsed');
-  document.getElementById('main').classList.toggle('collapsed');
-  document.getElementById('expand').hidden = true;
-  setTimeout(function() {
-    if (sliderApi) {
-      sliderApi.refresh();
-    }
-  }, 300);
-};
+// document.getElementById('expand').onclick = function() {
+//   document.getElementById('sidenav').classList.toggle('collapsed');
+//   document.getElementById('main').classList.toggle('collapsed');
+//   document.getElementById('expand').hidden = true;
+//   setTimeout(function() {
+//     if (sliderApi) {
+//       sliderApi.refresh();
+//     }
+//   }, 300);
+// };

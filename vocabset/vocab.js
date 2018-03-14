@@ -8,7 +8,7 @@ dbRef.on("value",function(snapshot)
   var leftside=Object.keys(vocabListAll); //only array with level name
   var rightside=Object.values(vocabListAll);  //json for the rest of db
   //add picture of different levelset
-  document.querySelector('#content').innerHTML=
+  document.querySelector('#main').innerHTML=
   `<div class="levels">
   ${leftside.map(function(levelset,index){
     totalLevelSet=index;
@@ -16,6 +16,8 @@ dbRef.on("value",function(snapshot)
   }).join('')}
   </div> <link rel="stylesheet" href="vocabset/vocab.css">
 `;
+});
+
 // document.getElementsByClassName("content")[0].innerHTML=`
 // <button type="button" name="button" id="prevButton">Prev</button>
 // <button type="button" name="button" id="nextButton">Next</button>
@@ -225,4 +227,3 @@ dbRef.on("value",function(snapshot)
   //     window.location.href=`/vocab/study/${targetNum}`;
   //   });
   // }
-});

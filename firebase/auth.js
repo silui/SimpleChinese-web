@@ -40,9 +40,6 @@ function userSignedIn()
     <a href="/">Welcome</a>
   </div>
   <div class="sidenav-item">
-    <a href="/profile">Profile</a>
-  </div>
-  <div class="sidenav-item">
     <a href="/vocab">Study</a>
   </div>
   <div class="sidenav-item">
@@ -52,7 +49,7 @@ function userSignedIn()
     <a href="#contact">Contact</a>
   </div>
   <div>
-    <a class="collapse" onclick="collapse()"> &lt;</a>
+    <a class="collapse" onclick="collapseSidebar()"> &lt;</a>
   </div>
     `;
 

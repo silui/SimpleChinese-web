@@ -42,7 +42,7 @@ function next()
       tableHTML+=`<tr><td>${resultArray[0][i]}</td><td>${resultArray[1][i]}</td><td>${resultArray[2][i]}</td></tr>`;
     }
     tableHTML+=`<table>${correctness}/25 is correct <button onclick="window.location.href='./'">Go Back</button>`;
-    document.getElementsByClassName("content")[0].innerHTML=tableHTML;
+    document.getElementsByClassName("main")[0].innerHTML=tableHTML;
     updateScore(firebase.auth().currentUser.uid,splitUrl[1],splitUrl[2],correctness);
   }
   else {

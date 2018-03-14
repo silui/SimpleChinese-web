@@ -15,6 +15,14 @@ app.set('port',80);
 
 app.use(express.static(__dirname));
 
+app.get('/test2', function(req,res){
+	console.log('get to homepage');
+	res
+		.status(200)
+		.sendFile('homepage3.html', {root: path.join(__dirname,'./homepage')});
+});
+
+
 app.get('/test',function(req,res){
 	console.log('get to testpage');
 	var dbRef=admin.database().ref("vocab");
@@ -33,7 +41,7 @@ app.get('/', function(req,res){
 	console.log('get to homepage');
 	res
 		.status(200)
-		.sendFile('homepage2.html', {root: path.join(__dirname,'./homepage')});
+		.sendFile('homepage3.html', {root: path.join(__dirname,'./homepage')});
 });
 
 app.get('/profile', function(req,res){

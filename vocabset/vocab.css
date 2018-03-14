@@ -1,5 +1,7 @@
+
+
 .levels {
-  padding: 0 20px;
+  padding: 10% 0px;
 }
 
 .levels a {
@@ -9,10 +11,13 @@
 }
 
 /* .levels img {
-  width: 100px;
-  height: 150px;
+  width: 18%;
 } */
 
-.level {
+/* .level {
   text-align: center;
+} */
+
+img{
+  width: 78%;
 }
