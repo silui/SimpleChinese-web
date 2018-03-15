@@ -1,3 +1,4 @@
+// glide.js is given by the glide template online
 /*!
  * glidejs
  * Version: 2.0.9

@@ -1,3 +1,7 @@
+// signupButton.js
+// Set events for when signup and logout button
+
+// Put button div and modal into HTML dynamically
 document.querySelector("#auth").innerHTML=`
 <button class="button" id="myBtn">Login/Sign up</button>
   <div id="myModal" class="modal">
@@ -18,13 +22,14 @@ document.querySelector("#auth").innerHTML=`
     </div>
   </div>
 `;
+
+// set onclick events for singin/out button
 var modal = document.querySelector('.modal');
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
   if(btn.innerHTML==="SignOut")
   {
-    // console.log("signout detected");
     firebase.auth().signOut();
   }
   else
@@ -33,6 +38,7 @@ btn.onclick = function() {
     document.querySelector('.loginbox').style.display = "block";
   }
 }
+
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
@@ -42,14 +48,3 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
-// document.getElementById('expand').onclick = function() {
-//   document.getElementById('sidenav').classList.toggle('collapsed');
-//   document.getElementById('main').classList.toggle('collapsed');
-//   document.getElementById('expand').hidden = true;
-//   setTimeout(function() {
-//     if (sliderApi) {
-//       sliderApi.refresh();
-//     }
-//   }, 300);
-// };
