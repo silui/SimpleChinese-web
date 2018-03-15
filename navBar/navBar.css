@@ -1,7 +1,10 @@
 body {
-  margin: 0;
-  background-image: url(../images/background.jpg);
+  margin: 0px;
+  background-image: url(../images/bg4.jpg);
+  background-size: 99%;
+  background-repeat: no-repeat;
   background-attachment:fixed;
+  background-position: bottom;
 }
 
 #sidenav {

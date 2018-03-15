@@ -12,8 +12,7 @@ document.querySelector("#auth").innerHTML=`
       <input type="password" name="" placeholder="Enter Password" id="passwordField">
       <button type="button" id="loginButton">Login</button>
       <button type="button" id="signupButton">Signup</button><br>
-      <a href="#"> Lost your account?</a>
-      <a href="#"> Don't have an account?</a>
+      <a href="/forgetPassword"> Forget Password?</a>
     </div>
     <link rel="stylesheet" href="/auth/signupButton.css">
     </div>
@@ -25,7 +24,7 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
   if(btn.innerHTML==="SignOut")
   {
-    console.log("signout detected");
+    // console.log("signout detected");
     firebase.auth().signOut();
   }
   else

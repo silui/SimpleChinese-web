@@ -50,11 +50,10 @@ app.get('/profile', function(req,res){
 		.sendFile('profile.html', {root: path.join(__dirname,'./profile')});
 });
 
-app.get('/auth', function(req,res){
-	console.log('get to login');
+app.get('/forgetPassword', function(req,res){
 	res
 		.status(200)
-		.sendFile('auth.html', {root: path.join(__dirname,'./auth')});
+		.sendFile('forgetPassword.html', {root: path.join(__dirname,'./auth')});
 });
 
 app.get('/vocab',function(req,res){

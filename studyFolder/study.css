@@ -1,0 +1,40 @@
+#main{
+  margin-top: 7%;
+}
+.button {
+  margin: 2px;
+  border: 2px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: white;
+  padding: 5px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 20px;
+}
+h1{
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 30px;
+}
+#studyField
+{
+  font-size: 50px;
+}
+#transField
+{
+  font-size: 30px;
+}
+#character-target-div
+{
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#pButton
+{
+  float: left;
+}
+#nButton
+{
+  float: right;
+}

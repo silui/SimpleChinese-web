@@ -6,7 +6,10 @@ var myMainSite;
 var splitUrl;
 var vocabSet;
 var vocabSetLength;
-
+var current;
+function validate(text) {
+    return current === text;
+}
 var dbRef=firebase.database().ref("vocab");
 dbRef.on("value",function(snapshot)
 {
@@ -26,46 +29,48 @@ dbRef.on("value",function(snapshot)
   <button type="button" name="openbutton" onclick="openNav()" id="openButton" style="display:none" >></button>
   <h1 id="studyTitle">Level 1 Study</h1>
   <script src="/navigationShift.js"></script>
-  <input type="button" id="clickP" value="Previous" onclick="clickForPre()">
-  <input type="button" id="clickN" value="Next" onclick="clickForNext()">
   <input type="button" id="replayButton" value="Replay" onclick="animat()">
-
   <input type="button" id="soundButton" value="speak" onclick="clickForSound()">
   <div id="studyField"> </div>
   <div id="character-target-div"></div>
   <div id="transField"> </div>
+  <a class="button" id="pButton" onclick="clickForPre()">Previous</a>
+  <a class="button" id="nButton" onclick="clickForNext()">Next</a>
   `;
-
   showChar();
 });
-function animat() {
-    var zhText=curStudy[vocabSet][i].hanzi;
-    var k=0;
-    const target=document.getElementById('character-target-div');
-    if (k === zhText.length) return;
-    const cha = zhText.charAt(k);
-    while (target.firstChild)
-        target.removeChild(target.firstChild);
-    let w = new HanziWriter(target, cha, {
-        width: 100,
-        height: 100,
-        padding: 5,
-        delayBetweenStrokes:200
-    })
-    w.animateCharacter({
-        onComplete: function () {
-            setTimeout(function () {
-                animat(zhText, k + 1);
-            }, 1);
-        }
-    });
+
+function animat(zhText=curStudy[vocabSet][i].hanzi, k=0)
+{
+  current = zhText;
+  const delayBetweenAnimations = 750;
+  if (k === zhText.length) return;
+  const target=document.getElementById('character-target-div');
+  const cha = zhText.charAt(k);
+  while (target.firstChild)
+      target.removeChild(target.firstChild);
+  let w = new HanziWriter(target, cha, {
+      width: 100,
+      height: 100,
+      padding: 5,
+      strokeAnimationSpeed: 6,
+      delayBetweenStrokes: 3
+  })
+  w.animateCharacter({
+      onComplete: function () {
+          if (!validate(zhText)) return;
+          setTimeout(function () {
+              if (!validate(zhText)) return;
+              animat(zhText, k + 1);
+          }, delayBetweenAnimations);
+      }
+  });
 }
+
 function showChar(){
   document.getElementById('studyField').innerHTML =
-`<h2 id"character">${curStudy[vocabSet][i].hanzi}</h2>
-<div>${curStudy[vocabSet][i].pinyin}</div>`;
-document.getElementById('studyTitle').innerHTML = `
-Level ${vocabSet+1} Study`;
+`<div id"character">${curStudy[vocabSet][i].hanzi}</div>${curStudy[vocabSet][i].pinyin}`;
+document.getElementById('studyTitle').innerHTML = `Level ${vocabSet+1} Study`;
 document.getElementById('transField').innerHTML = showTrans();
 animat(curStudy[vocabSet][i].hanzi,0);
 }
