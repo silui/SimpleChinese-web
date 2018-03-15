@@ -57,13 +57,8 @@ function submitPressed()
       resultArray[2].push(rInputArr[i].nextSibling.innerHTML);
     }
   }
-
-
-
-
-
   if(iter===globalWholeArray.length-1){
-    var tableHTML=`<table border="1"><tr><th>character</th><th>correct answer</th><th>your pick</th></tr>`;
+    var tableHTML=`<table border="1"><tr id="title"><th>Character</th><th>Correct answer</th><th>Your pick</th></tr>`;
     for(var i=0; i<resultArray[0].length;i++)
     {
       tableHTML+=`<tr><td>${resultArray[0][i]}</td><td>${resultArray[1][i]}</td><td>${resultArray[2][i]}</td></tr>`;

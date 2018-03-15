@@ -34,8 +34,8 @@ dbRef.on("value",function(snapshot)
   <div id="studyField"> </div>
   <div id="character-target-div"></div>
   <div id="transField"> </div>
-  <a class="button" id="pButton" onclick="clickForPre()">Previous</a>
   <a class="button" id="nButton" onclick="clickForNext()">Next</a>
+  <a class="button" id="pButton" onclick="clickForPre()">Previous</a>
   `;
   showChar();
 });
@@ -68,8 +68,7 @@ function animat(zhText=curStudy[vocabSet][i].hanzi, k=0)
 }
 
 function showChar(){
-  document.getElementById('studyField').innerHTML =
-`<div id"character">${curStudy[vocabSet][i].hanzi}</div>${curStudy[vocabSet][i].pinyin}`;
+  document.getElementById('studyField').innerHTML =`${curStudy[vocabSet][i].pinyin}<div id="character">${curStudy[vocabSet][i].hanzi}</div>`;
 document.getElementById('studyTitle').innerHTML = `Level ${vocabSet+1} Study`;
 document.getElementById('transField').innerHTML = showTrans();
 animat(curStudy[vocabSet][i].hanzi,0);

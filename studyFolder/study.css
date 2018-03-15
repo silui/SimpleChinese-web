@@ -1,5 +1,8 @@
 #main{
-  margin-top: 7%;
+  margin-top: 15%;
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+
+  /* text-align: left; */
 }
 .button {
   margin: 2px;
@@ -15,10 +18,20 @@
 h1{
   font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
   font-size: 30px;
+  float: left;
+  position: absolute;
+  bottom: -5px;
 }
+
+#character{
+  font-size: 60px;
+}
+
 #studyField
 {
-  font-size: 50px;
+  font-size: 40px;
+  float: left;
+  margin-left: 100px;
 }
 #transField
 {
@@ -32,9 +45,13 @@ h1{
 }
 #pButton
 {
-  float: left;
+  float: right;
 }
 #nButton
 {
   float: right;
+}
+#soundButton
+{
+
 }
