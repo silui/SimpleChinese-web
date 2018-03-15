@@ -19,29 +19,6 @@ function userSignedIn()   //borrow userSignedIn() from auth.js to get User data 
     <a class="collapse" onclick="collapseSidebar()"> &lt;</a>
   </div>
     `;
-  // document.getElementById('myBtn').innerHTML="SignOut";
-  // document.querySelector('#sidenav').innerHTML=`
-  // <a href="/" id="welcomeButton">Welcome</a>
-  // <a href="/profile" id='profileButton' class="grayClass">Profile</a>
-  // <a href="/vocab" id="studyButton" class="grayClass">Study</a>
-  // <a href="/quiz" id="quizButton" class="grayClass">Quiz</a>
-  // <a href="/" id="contactButton">Contact</a>
-  // <div>
-  //   <a class="collapse"> &lt;</a>
-  // </div>
-  //   `;
-    // document.getElementsByClassName('collapse')[0].onclick = function () {
-    //   document.getElementById('sidenav').classList.add('collapsed');
-    //   setTimeout(function() {
-    //     document.getElementById('main').style.marginLeft = '0px';
-    //     document.getElementById('expand').hidden = false;
-    //   }, 300);
-    // };
-    // document.getElementById('expand').onclick = function () {
-    //   document.getElementById('sidenav').classList.toggle('collapsed');
-    //   document.getElementById('main').style.marginLeft = '256px';
-    //   document.getElementById('expand').hidden = true;
-    // };
   var userID = firebase.auth().currentUser.uid
   var dbRef=firebase.database().ref(`user/${userID}`);
   dbRef.on("value",function(snapshot)
@@ -49,7 +26,8 @@ function userSignedIn()   //borrow userSignedIn() from auth.js to get User data 
     completedDB = snapshot.val();
     var completeBoxArr=document.getElementsByClassName("completedBox");
     var scoreFieldArr=document.getElementsByClassName("scoreClass");
-    assignBoxAndScore(completedDB,completeBoxArr,scoreFieldArr);
+    var startFieldArr=document.getElementsByClassName("start");
+    assignBoxAndScore(completedDB,completeBoxArr,scoreFieldArr,startFieldArr);
   });
 }
 
@@ -81,7 +59,7 @@ function buildTable(inputArray,vocabSet)
     returnString+=`
           <tr>
           <td>Set ${i}</td>
-          <td><a class="button" href='/quiz/${vocabSet}-${i}'>Start</a></td>
+          <td><a class="button start" href='/quiz/${vocabSet}-${i}'>Start</a></td>
           <td><input type="checkbox" onclick="return false;" class="completedBox" level="${levelNum}" set="${i}"></td>`;
     if(i==setCount && lastSetLength!=0)
     {
@@ -90,19 +68,14 @@ function buildTable(inputArray,vocabSet)
     else {
         returnString+=`<td><span class="scoreClass">0/25</span></td>`;
     }
-    // returnString+=`<td><input type="button" value="Erase" onclick="removeScore(this,${levelNum},${i})"></td></table>`;
     returnString+=`<td><a class="button" onclick="removeScore(this,${levelNum},${i})">Erase</a></td></tr>`;
-    // returnString+=`<tr>
-    //               <td><input type="checkbox" onclick="return false;" class="completedBox" level="${levelNum}" set="${i}"></td>
-    //               <td>${vocabSet}</td>
-    //               <td>set ${i}</td>
-    //               <td><button onclick="window.location.href='/quiz/${vocabSet}-${i}'">Select</button></td>
-    //               </tr>
-    //               `
   }
   return returnString+'</table>';
 }
-function assignBoxAndScore(db,boxArr,scoreArr)
+
+//check box if after fetching user complesion data
+//also change score board and disable start button
+function assignBoxAndScore(db,boxArr,scoreArr,startFieldArr)
 {
   var boxIter=0;
   for(var l=1;l<6;l++)
@@ -118,6 +91,9 @@ function assignBoxAndScore(db,boxArr,scoreArr)
             boxIter++;
         }
         boxArr[boxIter].checked=true;
+        startFieldArr[boxIter].setAttribute("onclick","return false");
+        startFieldArr[boxIter].innerHTML="Already finished";
+
         var outof=scoreArr[boxIter].innerHTML.split("/")[1];
         scoreArr[boxIter].innerHTML=score+"/"+outof;
       }
@@ -133,7 +109,8 @@ function removeScore(buttonDom,level,vocabSet)
   var parent=buttonDom.parentNode.parentNode;
   parent.childNodes[6].childNodes[0].innerHTML=stripScore(parent.childNodes[6].childNodes[0].innerHTML);
   parent.childNodes[5].childNodes[0].checked=false;
-
+  parent.childNodes[3].childNodes[0].removeAttribute("onclick");
+  parent.childNodes[3].childNodes[0].innerHTML="Start";
 }
 
 function stripScore(inputText)

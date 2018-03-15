@@ -1,7 +1,6 @@
 #main{
-  margin-top: 15%;
+  margin-top: 13%;
   font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
-
   /* text-align: left; */
 }
 .button {
@@ -15,12 +14,13 @@
   font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
   font-size: 20px;
 }
-h1{
+#studyTitle{
   font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
   font-size: 30px;
   float: left;
   position: absolute;
-  bottom: -5px;
+  padding-bottom: 0px;
+  bottom: 15px;
 }
 
 #character{
@@ -30,8 +30,9 @@ h1{
 #studyField
 {
   font-size: 40px;
-  float: left;
-  margin-left: 100px;
+  position: relative;
+  top: 12px;
+  right: 38%;
 }
 #transField
 {
@@ -39,19 +40,35 @@ h1{
 }
 #character-target-div
 {
-  width: 100px;
+  position: relative;
+  bottom: 100px;
+  width: 170px;
+  height: 170px;
   margin-left: auto;
   margin-right: auto;
 }
 #pButton
 {
-  float: right;
+  /* float: right; */
+  position: absolute;
+  right: 0px;
+  bottom: 25%;
 }
 #nButton
 {
-  float: right;
+  /* float: right; */
+  position: absolute;
+  right: 0px;
+  bottom: 20.5%;
+
 }
 #soundButton
 {
-
+  position: relative;
+  right: 35%;
+}
+#replayButton
+{
+  position: relative;
+  right: 3%;
 }

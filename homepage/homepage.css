@@ -1,0 +1,15 @@
+#main{
+  margin-top: 120px;
+}
+.carousel-wrapper
+{
+  margin: 25px 0px 0px 0px;
+}
+img{
+  width: 64%;
+}
+
+.glide__bullets
+{
+  z-index: -1;
+}

@@ -76,7 +76,7 @@ tr {
   border-color: inherit;
 }
 .levels{
-  width:100%;
+  width:80%;
   padding-left:20px
 }
 .level{
@@ -103,4 +103,12 @@ h1 {
   position:sticky;
   left:1.8%;
   bottom:2%;
+}
+body {
+  margin: 0px;
+  background-image: url(../images/quizselect.jpg);
+  background-size: 110%;
+  background-repeat: repeat;
+  /* background-attachment:fixed; */
+  background-position: right;
 }

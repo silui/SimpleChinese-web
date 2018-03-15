@@ -28,10 +28,9 @@ dbRef.on("value",function(snapshot)
   </audio>
   <button type="button" name="openbutton" onclick="openNav()" id="openButton" style="display:none" >></button>
   <h1 id="studyTitle">Level 1 Study</h1>
-  <script src="/navigationShift.js"></script>
-  <input type="button" id="replayButton" value="Replay" onclick="animat()">
-  <input type="button" id="soundButton" value="speak" onclick="clickForSound()">
-  <div id="studyField"> </div>
+  <a class="button" id="soundButton" onclick="clickForSound()">Speak</a>
+  <a class="button" id="replayButton" onclick="animat()">Replay</a>
+  <div id="studyField"></div>
   <div id="character-target-div"></div>
   <div id="transField"> </div>
   <a class="button" id="nButton" onclick="clickForNext()">Next</a>
@@ -50,8 +49,8 @@ function animat(zhText=curStudy[vocabSet][i].hanzi, k=0)
   while (target.firstChild)
       target.removeChild(target.firstChild);
   let w = new HanziWriter(target, cha, {
-      width: 100,
-      height: 100,
+      width: 170,
+      height: 170,
       padding: 5,
       strokeAnimationSpeed: 6,
       delayBetweenStrokes: 3
