@@ -108,7 +108,7 @@ function clickForNext(){
   }
 }
 
-function clickForSound(targetChar){
+function clickForSound(targetChar=curStudy[vocabSet][i].hanzi){
   var encodedTargetChar=encodeURI(targetChar);
   const soundUrl = `http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=2&text=${targetChar}`;
   document.getElementById('src').setAttribute('src', soundUrl);
