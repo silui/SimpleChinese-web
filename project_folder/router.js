@@ -33,6 +33,12 @@ app.get('/quiz/level*-*',function(req,res){
 	res.status(200).sendFile('quiz.html',{root: path.join(__dirname,'./quizFolder')});
 });
 
+app.get('/contact',function(req,res){
+	res.status(200).sendFile('contact.html',{root: path.join(__dirname,'./contact')});
+});
+
+
+
 var server = app.listen(app.get('port'),function()
 {
 	var port = server.address().port;

@@ -16,7 +16,7 @@ function userSignedIn()   //overwrite userSignedIn() from auth.js to get User da
     <a href="/quiz">Quiz</a>
   </div>
   <div class="sidenav-item">
-    <a href="#contact">Contact</a>
+    <a href="/contact">Contact</a>
   </div>
   <div>
     <a class="collapse" onclick="collapseSidebar()"> &lt;</a>
