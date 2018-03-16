@@ -1,0 +1,1 @@
+level selection might sometimes not display vocab, a refresh should fix it. It seem to only happen on level 4.
