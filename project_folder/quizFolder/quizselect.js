@@ -114,11 +114,12 @@ function removeScore(buttonDom,level,vocabSet)
   var uid=firebase.auth().currentUser.uid;
   var dbref=firebase.database().ref(`user/${uid}/${level}/${vocabSet}`);
   dbref.remove();       //remove entry from firebase for erase
-  var parent=buttonDom.parentNode.parentNode;
-  parent.childNodes[6].childNodes[0].innerHTML=stripScore(parent.childNodes[6].childNodes[0].innerHTML);
-  parent.childNodes[5].childNodes[0].checked=false;
-  parent.childNodes[3].childNodes[0].removeAttribute("onclick");
-  parent.childNodes[3].childNodes[0].innerHTML="Start";
+  location.reload();
+  // var parent=buttonDom.parentNode.parentNode;
+  // parent.childNodes[6].childNodes[0].innerHTML=stripScore(parent.childNodes[6].childNodes[0].innerHTML);
+  // parent.childNodes[5].childNodes[0].checked=false;
+  // parent.childNodes[3].childNodes[0].removeAttribute("onclick");
+  // parent.childNodes[3].childNodes[0].innerHTML="Start";
 }
 
 //this returns 4/24 into 0/24, aka strinping numerator while preserving denominator
