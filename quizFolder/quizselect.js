@@ -1,5 +1,6 @@
 // quizselect.js
 // This is used to display
+
 var completedDB;    //global variable for storing vocab database
 function userSignedIn()   //overwrite userSignedIn() from auth.js to get User data from firebase
 {
@@ -29,12 +30,13 @@ function userSignedIn()   //overwrite userSignedIn() from auth.js to get User da
     var completeBoxArr=document.getElementsByClassName("completedBox");
     var scoreFieldArr=document.getElementsByClassName("scoreClass");
     var startFieldArr=document.getElementsByClassName("start");
-    assignBoxAndScore(completedDB,completeBoxArr,scoreFieldArr,startFieldArr);
+    assignBoxAndScore(completedDB,completeBoxArr,scoreFieldArr,startFieldArr);    //call assignBoxAndScore to put table
   });
 }
 
-var dbRef=firebase.database().ref("vocab");
-dbRef.on("value",function(snapshot)
+//  build table after loaded data from firebase
+var vocabRef=firebase.database().ref("vocab");
+vocabRef.on("value",function(snapshot)
 {
   var vocabListAll = snapshot.val();
   var curStudy = Object.values(vocabListAll);
@@ -46,9 +48,10 @@ dbRef.on("value",function(snapshot)
     tempInnerHtml+='</div>';
   }
   tempInnerHtml+=`</div>`;
-  document.querySelector('#main').innerHTML=tempInnerHtml;
+  document.querySelector('#main').innerHTML=tempInnerHtml;    //change the actual innerHTML in the main div
 });
 
+//helper function for building each row of table
 function buildTable(inputArray,vocabSet)
 {
   var levelNum=vocabSet.replace(/[a-zA-Z]*/,'');
@@ -57,25 +60,28 @@ function buildTable(inputArray,vocabSet)
   var setCount=Math.ceil(length/set_length);
   var lastSetLength=length%set_length;
   var returnString='<table class="table"><tbody>';
-  for(var i=1; i<=setCount; i++){
+  for(var i=1; i<=setCount; i++)
+  {
     returnString+=`
           <tr>
           <td>Set ${i}</td>
           <td><a class="button start" href='/quiz/${vocabSet}-${i}'>Start</a></td>
-          <td><input type="checkbox" onclick="return false;" class="completedBox" level="${levelNum}" set="${i}"></td>`;
-    if(i==setCount && lastSetLength!=0)
+          <td><input type="checkbox" onclick="return false;" class="completedBox" level="${levelNum}" set="${i}"></td>
+          `;
+    if(i==setCount && lastSetLength!=0)   //if the set is not 25 of length
     {
         returnString+=`<td><span class="scoreClass">0/${lastSetLength}</span></td>`;
     }
-    else {
+    else
+    {
         returnString+=`<td><span class="scoreClass">0/25</span></td>`;
     }
-    returnString+=`<td><a class="button" onclick="removeScore(this,${levelNum},${i})">Erase</a></td></tr>`;
+    returnString+=`<td><a class="button" onclick="removeScore(this,${levelNum},${i})">Erase</a></td></tr>`;  //add erase button
   }
   return returnString+'</table>';
 }
 
-//check box if after fetching user complesion data
+//checked check box after fetching user complesion data
 //also change score board and disable start button
 function assignBoxAndScore(db,boxArr,scoreArr,startFieldArr)
 {
@@ -88,26 +94,26 @@ function assignBoxAndScore(db,boxArr,scoreArr,startFieldArr)
       {
         var set=Object.keys(db[l])[s];
         var score=Object.values(db[l])[s];
-        while(boxArr[boxIter].getAttribute("level")!=l || boxArr[boxIter].getAttribute("set")!=set)
+        while(boxArr[boxIter].getAttribute("level")!=l || boxArr[boxIter].getAttribute("set")!=set) //loop until you found the finished set
         {
             boxIter++;
         }
-        boxArr[boxIter].checked=true;
-        startFieldArr[boxIter].setAttribute("onclick","return false");
-        startFieldArr[boxIter].innerHTML="Already finished";
-
-        var outof=scoreArr[boxIter].innerHTML.split("/")[1];
-        scoreArr[boxIter].innerHTML=score+"/"+outof;
+        boxArr[boxIter].checked=true;     //set check box checked
+        startFieldArr[boxIter].setAttribute("onclick","return false");    //disable start button
+        startFieldArr[boxIter].innerHTML="Already finished";        //set new text for start button
+        var outof=scoreArr[boxIter].innerHTML.split("/")[1];      //get what the score of the set is out of
+        scoreArr[boxIter].innerHTML=score+"/"+outof;        //assign new score
       }
     }
   }
 }
 
+//function for when Erase button is pressed
 function removeScore(buttonDom,level,vocabSet)
 {
   var uid=firebase.auth().currentUser.uid;
   var dbref=firebase.database().ref(`user/${uid}/${level}/${vocabSet}`);
-  dbref.remove();
+  dbref.remove();       //remove entry from firebase for erase
   var parent=buttonDom.parentNode.parentNode;
   parent.childNodes[6].childNodes[0].innerHTML=stripScore(parent.childNodes[6].childNodes[0].innerHTML);
   parent.childNodes[5].childNodes[0].checked=false;
@@ -115,6 +121,7 @@ function removeScore(buttonDom,level,vocabSet)
   parent.childNodes[3].childNodes[0].innerHTML="Start";
 }
 
+//this returns 4/24 into 0/24, aka strinping numerator while preserving denominator
 function stripScore(inputText)
 {
   var outOf=inputText.split('/')[1];

@@ -1,24 +1,19 @@
-var vocabListAll;
-var levels;
-var curStudy;
-var i=0; //No. of char in the list
-var myMainSite;
-var splitUrl;
-var vocabSet;
-var vocabSetLength;
-var current;
-function validate(text) {
-    return current === text;
-}
+// study.js
+
+
+var curStudy; //this stores the whole JSON file
+var i=0; //iterator for current vocab
+var vocabSet;   //stores the set we are currently on
+var vocabSetLength;   //stores upperbound for
+var current;      //helper variable for animat to check if currently display strokes is the current char
+
 var dbRef=firebase.database().ref("vocab");
 dbRef.on("value",function(snapshot)
 {
-  vocabListAll = snapshot.val();
-  levels = Object.keys(vocabListAll);
+  let vocabListAll = snapshot.val();
   curStudy = Object.values(vocabListAll);
-  i = 0; //No. of char in the list
-  myMainSite = window.location.pathname;
-  splitUrl = myMainSite.split('/vocab/study/');
+  i = 0;
+  var splitUrl = window.location.pathname.split('/vocab/study/');
   vocabSet = splitUrl[1]-1;
   vocabSetLength = Object.values(curStudy[vocabSet]).length;
 
@@ -39,6 +34,7 @@ dbRef.on("value",function(snapshot)
   showChar();
 });
 
+//function for writing strokes on character-target-div div
 function animat(zhText=curStudy[vocabSet][i].hanzi, k=0)
 {
   current = zhText;
@@ -48,6 +44,7 @@ function animat(zhText=curStudy[vocabSet][i].hanzi, k=0)
   const cha = zhText.charAt(k);
   while (target.firstChild)
       target.removeChild(target.firstChild);
+  // set property of strokes writing here
   let w = new HanziWriter(target, cha, {
       width: 170,
       height: 170,
@@ -66,14 +63,22 @@ function animat(zhText=curStudy[vocabSet][i].hanzi, k=0)
   });
 }
 
-function showChar(){
-  document.getElementById('studyField').innerHTML =`${curStudy[vocabSet][i].pinyin}<div id="character">${curStudy[vocabSet][i].hanzi}</div>`;
-document.getElementById('studyTitle').innerHTML = `Level ${vocabSet+1} Study`;
-document.getElementById('transField').innerHTML = showTrans();
-animat(curStudy[vocabSet][i].hanzi,0);
+//helper function for animat
+function validate(text)
+{
+  return current === text;
 }
 
+//helper function for when next or previous button pressed
+function showChar()
+{
+  document.getElementById('studyField').innerHTML =`${curStudy[vocabSet][i].pinyin}<div id="character">${curStudy[vocabSet][i].hanzi}</div>`;
+  document.getElementById('studyTitle').innerHTML = `Level ${vocabSet+1} Study`;
+  document.getElementById('transField').innerHTML = showTrans();
+  animat(curStudy[vocabSet][i].hanzi,0);
+}
 
+//return the definition strong
 function showTrans(){
   var temp='<strong>Definition:</strong>';
   var translationNum = curStudy[vocabSet][i].translations.length;
@@ -84,14 +89,15 @@ function showTrans(){
       temp += curStudy[vocabSet][i].translations[j];
       temp += ', ';
     }
-    else {
+    else
       temp += curStudy[vocabSet][i].translations[j];
-    }
   }
   return temp;
 }
 
-function clickForPre(){
+//function that get called when previous button is pressed
+function clickForPre()
+{
   if(i > 0)
   {
     i--;
@@ -99,7 +105,9 @@ function clickForPre(){
   }
 }
 
-function clickForNext(){
+//function that get called when next button is pressed
+function clickForNext()
+{
   if(i < vocabSetLength)
   {
     i++;
@@ -107,7 +115,9 @@ function clickForNext(){
   }
 }
 
-function clickForSound(targetChar=curStudy[vocabSet][i].hanzi){
+// function that get called when speak button is pressed
+function clickForSound(targetChar=curStudy[vocabSet][i].hanzi)
+{
   var encodedTargetChar=encodeURI(targetChar);
   const soundUrl = `http://tts.baidu.com/text2audio?lan=zh&ie=UTF-8&spd=2&text=${targetChar}`;
   document.getElementById('src').setAttribute('src', soundUrl);
