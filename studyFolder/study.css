@@ -1,7 +1,6 @@
 #main{
   margin-top: 13%;
   font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
-  /* text-align: left; */
 }
 .button {
   margin: 2px;
@@ -22,13 +21,13 @@
   padding-bottom: 0px;
   bottom: 15px;
 }
-
 #character{
   font-size: 60px;
 }
 
 #studyField
 {
+  z-index:-1;
   font-size: 40px;
   position: relative;
   top: 12px;
@@ -49,23 +48,20 @@
 }
 #pButton
 {
-  /* float: right; */
   position: absolute;
   right: 0px;
-  bottom: 25%;
+  top: 30%;
 }
 #nButton
 {
-  /* float: right; */
   position: absolute;
   right: 0px;
-  bottom: 20.5%;
-
+  top: 35%;
 }
 #soundButton
 {
   position: relative;
-  right: 35%;
+  right: 34%;
 }
 #replayButton
 {

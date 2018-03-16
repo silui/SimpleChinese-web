@@ -1,5 +1,7 @@
-var completedDB;
-function userSignedIn()   //borrow userSignedIn() from auth.js to get User data from firebase
+// quizselect.js
+// This is used to display
+var completedDB;    //global variable for storing vocab database
+function userSignedIn()   //overwrite userSignedIn() from auth.js to get User data from firebase
 {
   document.getElementById('myBtn').innerHTML="SignOut";
   document.querySelector('#sidenav').innerHTML=`
@@ -19,7 +21,7 @@ function userSignedIn()   //borrow userSignedIn() from auth.js to get User data 
     <a class="collapse" onclick="collapseSidebar()"> &lt;</a>
   </div>
     `;
-  var userID = firebase.auth().currentUser.uid
+  var userID = firebase.auth().currentUser.uid;
   var dbRef=firebase.database().ref(`user/${userID}`);
   dbRef.on("value",function(snapshot)
   {
