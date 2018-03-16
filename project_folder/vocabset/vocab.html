@@ -1,0 +1,34 @@
+<!-- vocab.html -->
+<!-- html for vocab select page with custom css and js file -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to SimpleChinese</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+  <div id="sidenav">
+    <div class="sidenav-item">
+      <a href="index.html">Welcome</a>
+    </div>
+    <div class="sidenav-item">
+      <a href="#contact">Contact</a>
+    </div>
+    <div>
+      <a class="collapse" onclick="collapseSidebar()"> &lt;</a>
+    </div>
+  </div>
+  <div id="auth"></div>
+  <div id="main"></div>
+  <a id="expand" class="button" onclick="expandSidebar()" hidden>&gt;</a>
+</body>
+<!-- basic dependency -->
+<link rel="stylesheet" href="/navBar/navBar.css">
+<script src="/navBar/navBar.js"></script>
+<script src="/auth/signupButton.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+<script src="/firebase/auth.js"></script>
+<!-- vocabSelect dependency -->
+<script src="/vocabset/vocab.js"></script>
+<link rel="stylesheet" href="/vocabset/vocab.css">
+</html>

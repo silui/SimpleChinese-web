@@ -1,0 +1,116 @@
+/* quizselect.css */
+/* stylesheet for quiz selection page */
+#main
+{
+  margin-top: 50px;
+}
+.button {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: white;
+  padding: 5px 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.levels {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+
+.level .li {
+  padding: 10px 0;
+}
+
+.head {
+  text-align: center;
+}
+
+.head span {
+  margin: 0 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title span {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.title img {
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+
+.table {
+    width: 60%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: grey;
+}
+.table thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+.table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.levels{
+  width:80%;
+  padding-left:20px
+}
+.level{
+  width:100%;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 2px solid white;
+}
+h1 {
+  text-align: left;
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 30px;
+}
+#expand {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: white;
+  padding: 6px 18px;
+  cursor: pointer;
+  text-decoration: none;
+  position:sticky;
+  left:1.8%;
+  bottom:2%;
+}
+body {
+  margin: 0px;
+  background-image: url(../images/quizselect.jpg);
+  background-size: 110%;
+  background-repeat: repeat;
+  /* background-attachment:fixed; */
+  background-position: right;
+}

@@ -1,0 +1,82 @@
+/* components.css */
+/* style sheets for signupbutton */
+
+/* button */
+.button {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: white;
+  padding: 5px 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* carousel */
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel {
+  margin: 0 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .carousel-images {
+  position: absolute;
+  overflow: hidden;
+}
+
+.carousel-images img {
+  float: left;
+}
+
+.carousel-indicators-wrapper {
+  height: 20px;
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.carousel-indicators div {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+.carousel-indicators .active {
+  background-color: #000;
+}
+
+.carousel-control {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -62.5px;
+}
+
+.carousel-control span {
+  display: inline-block;
+  cursor: pointer;
+  height: 0px;
+}
+
+.carousel-control .next {
+  border-top: 20px solid transparent;
+  border-right: 20px solid #555;
+  border-bottom: 20px solid transparent;
+  float: left;
+  margin-left: 10px;
+}
+
+.carousel-control .prev {
+  border-top: 20px solid transparent;
+  border-left: 20px solid #555;
+  border-bottom: 20px solid transparent;
+  float: right;
+  margin-right: 10px;
+}

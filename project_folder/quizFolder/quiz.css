@@ -1,0 +1,79 @@
+/* quiz.css */
+/* styling for quiz page */
+#main
+{
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  margin-top: 6%;
+  margin-right: 6%;
+  padding-bottom: 100px;
+}
+.options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  text-align: left;
+  justify-content: center;
+}
+
+.options .option {
+  display: inline-block;
+  max-width: 320px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px hsla(0, 0%, 4%, 0.1), 0 0 0 1px hsla(0, 0%, 4%, 0.1);
+  margin: 0 10px 10px 0;
+  background-color: white;
+}
+
+.button {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: white;
+  padding: 5px 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#vocabField
+{
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 80px;
+}
+.options
+{
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 20px;
+}
+
+.head
+{
+  float:left;
+  position: absolute;
+  bottom: -5px;
+}
+
+span
+{
+  display: block
+  width: auto;
+}
+table
+{
+  font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  text-align: left;
+}
+#title
+{
+	font-size: 20px;
+}
+td{
+	padding: 6px;
+}
+tr:nth-child(odd) {
+  /* background-color: #ffffff; */
+  background-color: rgba(220,220,220,0.7);
+}
+tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.7);
+}

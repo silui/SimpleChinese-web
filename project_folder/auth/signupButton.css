@@ -1,0 +1,123 @@
+/* styling for signUp button and signin modal */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.loginbox{
+  width: 320px;
+  height: 420px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+.avatar{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top:-50px;
+  left: calc(50% - 50px);
+}
+h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+.loginbox p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.loginbox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginbox input[type="text"],input[type="password"]{
+  border:none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size:16px;
+}
+.loginbox input[type="submit"]
+{
+  border:none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+  cursor:pointer;
+  background: #ffc107;
+  color: #000;
+}
+.loginbox a{
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: darkgrey;
+}
+
+.loginbox a:hover
+{
+  color: #ffc107;
+}
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #f953ae;
+    text-decoration: none;
+    cursor: pointer;
+}
+#myBtn
+{
+    z-index: 1;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    padding: 10px 12px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+    /* float:right; */
+}
+  #myBtn:hover {background-color: #3e8e41}
+  #myBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  } */

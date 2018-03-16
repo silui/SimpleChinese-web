@@ -1,0 +1,2 @@
+Our team follow clean code practices listed in this site
+https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118
