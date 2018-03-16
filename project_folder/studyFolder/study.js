@@ -3,9 +3,11 @@
 
 var curStudy; //this stores the whole JSON file
 var i=0; //iterator for current vocab
-var vocabSet;   //stores the set we are currently on
+var splitUrl = window.location.pathname.split('/vocab/study/');
+var vocabSet = splitUrl[1]-1;   //stores the set we are currently on
 var vocabSetLength;   //stores upperbound for
 var current;      //helper variable for animat to check if currently display strokes is the current char
+
 
 var dbRef=firebase.database().ref("vocab");
 dbRef.on("value",function(snapshot)
@@ -13,10 +15,7 @@ dbRef.on("value",function(snapshot)
   let vocabListAll = snapshot.val();
   curStudy = Object.values(vocabListAll);
   i = 0;
-  var splitUrl = window.location.pathname.split('/vocab/study/');
-  vocabSet = splitUrl[1]-1;
   vocabSetLength = Object.values(curStudy[vocabSet]).length;
-
   document.querySelector('#main').innerHTML=`
   <audio id="aud" autoplay="autoplay">
     <source id="src" type="audio/mpeg" src="">
@@ -31,7 +30,7 @@ dbRef.on("value",function(snapshot)
   <a class="button" id="nButton" onclick="clickForNext()">Next</a>
   <a class="button" id="pButton" onclick="clickForPre()">Previous</a>
   `;
-  showChar();
+  // showChar();
 });
 
 //function for writing strokes on character-target-div div
@@ -72,6 +71,7 @@ function validate(text)
 //helper function for when next or previous button pressed
 function showChar()
 {
+  updateLastlanding(firebase.auth().currentUser.uid,vocabSet+1,i)           //save and upload where user last was during study
   document.getElementById('studyField').innerHTML =`${curStudy[vocabSet][i].pinyin}<div id="character">${curStudy[vocabSet][i].hanzi}</div>`;
   document.getElementById('studyTitle').innerHTML = `Level ${vocabSet+1} Study`;
   document.getElementById('transField').innerHTML = showTrans();
@@ -124,4 +124,46 @@ function clickForSound(targetChar=curStudy[vocabSet][i].hanzi)
   const aud = document.getElementById('aud');
   aud.load();
   return aud.play();
+}
+
+function userSignedIn()   //overwrite userSignedIn() from auth.js to get User data from firebase
+{
+  document.getElementById('myBtn').innerHTML="SignOut";
+  document.querySelector('#sidenav').innerHTML=`
+  <div class="sidenav-item">
+    <a href="/">Welcome</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="/vocab">Study</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="/quiz">Quiz</a>
+  </div>
+  <div class="sidenav-item">
+    <a href="#contact">Contact</a>
+  </div>
+  <div>
+    <a class="collapse" onclick="collapseSidebar()"> &lt;</a>
+  </div>
+    `;
+  var userID = firebase.auth().currentUser.uid;
+  var landingRef=firebase.database().ref(`user/${userID}/landing/level${vocabSet+1}`);
+  landingRef.on("value",function(snapshot)
+  {
+    console.log(snapshot.val());
+    if(snapshot.val()!=null)
+    {
+      i=snapshot.val();
+    }
+    showChar();
+  });
+}
+
+
+//function that update landing
+function updateLastlanding(userID,level,index)
+{
+  var dbRef=firebase.database().ref(`user/${userID}/landing`);
+  let temp="level"+level;
+  dbRef.update({[temp]:index});
 }
