@@ -8,4 +8,5 @@ In study page, you first select the level you want to study by clicking the indi
 In quiz page, it will display the set score and whether you've completed the quiz. Once you selected a set, each set has about 25 vocabs. Once you finish the set, a result window will be displayed and shows you what you got wrong as well as the result. 
 
 Demo: https://youtu.be/vemjs7nA5x0
-![](https://imgur.com/a/diKqhFh)
+
+![Alt Text](https://imgur.com/a/diKqhFh)
