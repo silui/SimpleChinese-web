@@ -9,4 +9,5 @@ In quiz page, it will display the set score and whether you've completed the qui
 
 Demo: https://youtu.be/vemjs7nA5x0
 
-![](http://i.imgur.com/OUkLi.gif)
+
+![Imgur](https://i.imgur.com/33AriHc.gifv)
